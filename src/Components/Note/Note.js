@@ -15,7 +15,10 @@ const Note = (props) => {      // by using the props we dynamically added the no
     <>
         <div className="note" style={{backgroundColor:props.note.color}}>
             <textarea className="note-text" defaultValue={props.note.text}/>
-            <p>{props.note.time}</p>
+            <div className="note-footer">
+              <p>{props.note.time}</p>
+              <img src="/images/delete.svg" alt="Delete Note" />
+            </div>
         </div>
     </>
   )

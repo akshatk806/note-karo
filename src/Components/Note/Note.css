@@ -17,3 +17,21 @@
     outline: none;
     border: none;
 }
+
+/* deleting the note */
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-footer img{
+    cursor: pointer;
+    width: 25px;
+    opacity: 0;
+    transition: 300ms;
+}
+
+.note:hover .note-footer img{
+    opacity: 1;
+}
