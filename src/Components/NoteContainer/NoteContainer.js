@@ -9,7 +9,7 @@ const NoteContainer = (props) => {
         <div className="note-container-notes custom-scroll">
             {
                 props.notes.map((note, index) => <Note
-                    key={index} 
+                    key={note.id} 
                     note={{
                         text:note.text,
                         time:note.time,
