@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NoteContainer from './Components/NoteContainer/NoteContainer.js'
 import Siderbar from './Components/Sidebar/Siderbar.js'
 import './App.css'
 
 const App = () => {
   // content of a note we want content dynamically not hard coded
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notekaro")) || []);
 
   const addNote = (color) => {
     // creating a new note
@@ -34,6 +34,11 @@ const App = () => {
     tempNotes.splice(index, 1);
     setNotes(tempNotes);
   }
+
+  // saving the content of the note into the local storage
+  useEffect( () => {
+    localStorage.setItem('notekaro', JSON.stringify(notes));
+  }, [notes])
 
   return (
     <div className="App">
