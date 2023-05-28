@@ -35,15 +35,27 @@ const App = () => {
     setNotes(tempNotes);
   }
 
+  const updateText = (text, id) => {
+    const tempNotes = [...notes];
+
+    const index = tempNotes.findIndex(note => note.id === id)
+    if(index < 0) {
+      return;
+    }
+
+    tempNotes[index].text = text;
+    setNotes(tempNotes);
+  }
+
   // saving the content of the note into the local storage
   useEffect( () => {
-    localStorage.setItem('notekaro', JSON.stringify(notes));
+    localStorage.setItem("notekaro", JSON.stringify(notes));
   }, [notes])
 
   return (
     <div className="App">
       <Siderbar addNote = {addNote}/>
-      <NoteContainer notes={notes} deleteNote={deleteNote}/>
+      <NoteContainer notes={notes} deleteNote={deleteNote} updateText={updateText}/>
     </div>
   )
 }

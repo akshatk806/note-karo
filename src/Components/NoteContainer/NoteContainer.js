@@ -11,12 +11,9 @@ const NoteContainer = (props) => {
                 props.notes.length > 0 ? 
                 props.notes.map((note, index) => <Note
                     key={note.id} 
-                    note={{
-                        text:note.text,
-                        time:note.time,
-                        color:note.color
-                    }} 
+                    note={note} 
                     deleteNote = {props.deleteNote}
+                    updateText = {props.updateText}
                 />) : <div>
                         <h3>No Notes Present</h3>
                     </div>

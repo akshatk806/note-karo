@@ -1,6 +1,9 @@
 import React from 'react'
 import "./Note.css"
 
+let timer = 500, 
+  timeout;
+
 const Note = (props) => {      // by using the props we dynamically added the note description and datetime
 
     /* props structure
@@ -43,10 +46,25 @@ const Note = (props) => {      // by using the props we dynamically added the no
       return `${hours}:${min} ${AmPm}, ${day} ${month} ${year}`;
     }
 
+
+    // debounce: koi code kuch time ke baad run kare. agar me google search bar me jaldi jaldi type karu to koi suggestion mere type karne ke thoda baad me aaaega, means response late aaega 
+    // for example 15 letters ka humne google search bar me type kiya to to kya 15 alag alag baar API call hoga isse server pe load padega
+    // to uske liye debounce use karte h ki 200ms ka time hoga, is timer ke baad ki API call hoga
+    // har ek letter type karne ke baad API call hoga ye debounce hota h
+    const debounce = (func) =>{
+      clearTimeout(timeout)
+      timeout = setTimeout(func, timer);
+    }  
+
+    // in localStorage
+    const updateText = (text, id) => {
+      debounce(() => props.updateText(text, id))
+    }
+
   return (
     <>
         <div className="note" style={{backgroundColor:props.note.color}}>
-            <textarea className="note-text" defaultValue={props.note.text}/>
+            <textarea className="note-text" defaultValue={props.note.text} onChange={event => updateText(event.target.value, props.note.id)}/>
             <div className="note-footer">
               <p>{formatDate(props.note.time)}</p>
               <img src="/images/delete.svg" 
