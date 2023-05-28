@@ -13,6 +13,13 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
+
+    /* we want that when we click on Add button the color pallete toggles up */
+    height: 0;
+    transition: 300ms;
+}
+.sidebar-list-active{
+    height: 300px;
 }
 
 .sidebar-list-item{
