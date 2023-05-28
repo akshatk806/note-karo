@@ -17,7 +17,10 @@ const Note = (props) => {      // by using the props we dynamically added the no
             <textarea className="note-text" defaultValue={props.note.text}/>
             <div className="note-footer">
               <p>{props.note.time}</p>
-              <img src="/images/delete.svg" alt="Delete Note" />
+              <img src="/images/delete.svg" 
+                alt="Delete Note" 
+                onClick={()=>props.deleteNote(props.note.id)}
+              />
             </div>
         </div>
     </>

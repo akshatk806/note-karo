@@ -22,10 +22,23 @@ const App = () => {
     setNotes(tempNotes);
   }
 
+  const deleteNote = (id) => {
+    const tempNotes = [...notes];
+
+    const index = tempNotes.find(note => note.id === id)
+
+    if(index < 0) {
+      return;
+    }
+
+    tempNotes.splice(index, 1);
+    setNotes(tempNotes);
+  }
+
   return (
     <div className="App">
       <Siderbar addNote = {addNote}/>
-      <NoteContainer notes={notes}/>
+      <NoteContainer notes={notes} deleteNote={deleteNote}/>
     </div>
   )
 }

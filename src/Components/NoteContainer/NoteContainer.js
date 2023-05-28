@@ -16,6 +16,7 @@ const NoteContainer = (props) => {
                         time:note.time,
                         color:note.color
                     }} 
+                    deleteNote = {props.deleteNote}
                 />) : <div>
                         <h3>No Notes Present</h3>
                     </div>
