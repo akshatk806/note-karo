@@ -8,6 +8,7 @@ const NoteContainer = (props) => {
         <h2>Note Karo</h2>
         <div className="note-container-notes custom-scroll">
             {
+                props.notes.length > 0 ? 
                 props.notes.map((note, index) => <Note
                     key={note.id} 
                     note={{
@@ -15,7 +16,9 @@ const NoteContainer = (props) => {
                         time:note.time,
                         color:note.color
                     }} 
-                />)
+                />) : <div>
+                        <h3>No Notes Present</h3>
+                    </div>
             }
         </div>
     </div>
