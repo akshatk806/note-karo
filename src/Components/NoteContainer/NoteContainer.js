@@ -3,7 +3,11 @@ import Note from '../Note/Note.js'
 const NoteContainer = () => {
   return (
     <>
-        <Note/>
+        <Note note={{
+            text:"akshat",
+            time:"6:69 PM 28 May",
+            color:"pink"
+        }} />
     </>
   )
 }
