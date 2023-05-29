@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Note.css"
 
-let timer = 500, 
+let timer = 100, 
   timeout;
 
 const Note = (props) => {      // by using the props we dynamically added the note description and datetime

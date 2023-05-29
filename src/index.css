@@ -1,3 +1,13 @@
+:root {
+  --body_background: white;
+  --body_color: black;
+}
+
+[data-theme="dark"] {
+  --body_background: #2c2d30;
+  --body_color: white;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -11,4 +21,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body_background);
+  color: var(--body_color);
+}
+
+@media only screen and (max-width: 600px) {
+  [data-theme="dark"] {
+    --body_background: #303030;
+    --body_color: white;
+  }
 }

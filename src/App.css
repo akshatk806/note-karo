@@ -16,7 +16,7 @@
 .custom-scroll::-webkit-scrollbar-thumb{
     border-radius: 20px;
     background-color: lightgray;
-    transition: 300ms;      /*we want to change the color while hovering*/
+    transition: 300ms !important;      /*we want to change the color while hovering*/
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover{

@@ -1,11 +1,15 @@
 import React from 'react'
 import Note from '../Note/Note.js'
 import "./NoteContainer.css"
+import DarkMode from '../DarkMode/DarkMode.js'
 
 const NoteContainer = (props) => {
   return (
     <div className="note-container">
-        <h2>Note Karo</h2>
+        <div className='note-container-header'>
+          <h2>NoteKaro</h2>
+          <DarkMode />
+        </div>
         <div className="note-container-notes custom-scroll">
             {
                 props.notes.length > 0 ? 

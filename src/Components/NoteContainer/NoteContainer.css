@@ -6,6 +6,12 @@
     margin-bottom: 20px;
 }
 
+.note-container-header{
+    display: flex;
+    gap: 90px;
+    margin-bottom: 20px;
+}
+
 .note-container-notes{
     height: 90%;       /* for our custom scroll bar for notes only we don't want to scroll the whole App*/
     display: flex;
