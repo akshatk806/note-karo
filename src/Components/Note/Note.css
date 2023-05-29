@@ -35,3 +35,12 @@
 .note:hover .note-footer img{
     opacity: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    .note-footer img{
+        cursor: pointer;
+        width: 25px;
+        opacity: 1;
+        transition: 300ms;
+    }
+}
