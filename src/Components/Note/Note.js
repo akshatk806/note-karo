@@ -32,7 +32,7 @@ const Note = (props) => {      // by using the props we dynamically added the no
       let AmPm = hours > 12 ? "PM" : "AM"
 
       hours = hours ? hours : "12"
-      hours = hours > 12 ? 24-hours : hours
+      hours = hours > 12 ? hours - 12 : hours
 
       let min = date.getMinutes();
       min = min < 10 ? "0"+min : min;
