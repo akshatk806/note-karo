@@ -29,3 +29,7 @@
     width: 20px;
     list-style: none;
 }
+
+[data-theme="dark"] .addIcon {
+    filter: invert(1);
+}

@@ -9,7 +9,7 @@ const Siderbar = (props) => {
 
   return (
     <div className="sidebar">
-        <img src="images/plus.png" alt="Add" onClick={()=>setListOpen(!listOpen)}/>
+        <img src="images/plus.png" className='addIcon' alt="Add" onClick={()=>setListOpen(!listOpen)}/>
         <ul className={ `sidebar-list ${listOpen ? "sidebar-list-active":""}` }>
             {
                 // generating the color dynamically

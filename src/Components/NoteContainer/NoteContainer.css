@@ -21,3 +21,7 @@
     /* for our custom scroll bar */
     overflow-y: scroll;
 }
+
+.note-footer p{
+    color: #000;
+}
